@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 namespace Zadanie1Piotrek
 {
     class Program
-    {
+    {        
         static void Main(string[] args)
         {
+            Menu oMenu = new Menu();
+            oMenu.Show();
         }
     }
 }

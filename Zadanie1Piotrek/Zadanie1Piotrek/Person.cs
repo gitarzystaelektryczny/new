@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Zadanie1Piotrek
 {
-    class Osoba
+    class Person
     {
         public string Imie { get; set; }
-        public String Nazwisko { get; set; }
+        public string Nazwisko { get; set; }
         public int Wiek { get; set; }   
         private string pesel;
-
         public string Pesel
         {
             get { return pesel; }
@@ -34,14 +33,14 @@ namespace Zadanie1Piotrek
 
 
 
-        public Osoba() {}
-        public Osoba(string imie, string nazwisko, int wiek)
+        public Person() { }
+        public Person(string imie, string nazwisko, int wiek)
         {
             Imie = imie;
             Nazwisko = nazwisko;
             Wiek = wiek;
         }
-        public Osoba(string imie, string nazwisko, int wiek,string pesel) : this(imie,nazwisko, wiek)
+        public Person(string imie, string nazwisko, int wiek, string pesel) : this(imie, nazwisko, wiek)
         {
 
             Pesel = pesel;
