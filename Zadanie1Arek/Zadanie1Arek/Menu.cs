@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 
 namespace Zadanie1Arek
 {
-    class PokazMenu
+    internal class Menu
     {
         
-        ListaOsob oOsoba = new ListaOsob();
+        private PersonsList person = new PersonsList();
         
 
-        public void Wyswietl()
+        public void ShowMenu()
         {
             Console.WriteLine("\nMENU PROGRAMU\n\nWybierz jedną z opcji:\n1.Dodaj nową osobę\n2.Wyświetl wszystkie osoby\n3.Wyjście");
             int a = int.Parse(Console.ReadLine());
             switch (a)
             {
                 case 1:
-                    oOsoba.DodajOsobe();
-                    Wyswietl();
+                    person.AddPerson();
+                    ShowMenu();
                     break;
                 case 2:
-                    oOsoba.PokazOsoby();
-                    Wyswietl();
+                    person.GetAllPersons();
+                    ShowMenu();
                     break;
                 case 3:
                     Console.WriteLine("No i działa mały sqrczybyk!");

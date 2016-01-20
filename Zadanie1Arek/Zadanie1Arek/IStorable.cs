@@ -8,7 +8,7 @@ namespace Zadanie1Arek
 {
     interface IStorable
     {
-        void PokazOsoby();
-        void DodajOsobe();
+        List<Person> GetAllPersons;
+        void AddPerson(Person person);
     }
 }

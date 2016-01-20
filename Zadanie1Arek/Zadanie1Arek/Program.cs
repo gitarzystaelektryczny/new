@@ -12,9 +12,9 @@ namespace Zadanie1Arek
 
         static void Main(string[] args)
         {
-            PokazMenu oPokazMenu = new PokazMenu();
+            Menu menu = new Menu();  //czy dobrze nazwałem obiekt?
             
-            oPokazMenu.Wyswietl(); 
+            menu.ShowMenu(); 
 
         }
 

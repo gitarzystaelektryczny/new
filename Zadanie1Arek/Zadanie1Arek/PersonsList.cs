@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Zadanie1Arek
 {
-    class ListaOsob : IStorable
+    internal class PersonsList : IStorable
     {
-        List<Osoba> LOsob = new List<Osoba>();
+        private List<Person> persons = new List<Person>(); 
         
                           
 
-        public void DodajOsobe()
+        public void AddPerson(Person person)
         {
             Console.WriteLine("\nWprowadź dane nowej osoby.\n");
             Console.WriteLine("Podaj imię: ");
@@ -29,27 +29,27 @@ namespace Zadanie1Arek
             string nt = Console.ReadLine();
             
 
-            Osoba oOsoba = new Osoba(i, n, w, a, p, nt);
-            LOsob.Add(oOsoba);
+            
+            persons.Add(new Person(i, n, w, a, p, nt));
             
         }
 
        
 
 
-        public void PokazOsoby()
+        public void GetAllPersons()
         {
             Console.WriteLine("\nLISTA OSÓB");
-            for (int i = 0; i < LOsob.Count; i++)
+            for (int i = 0; i < persons.Count; i++)
             {
                 
                 Console.WriteLine("\nOsoba {0}", i+1);
-                Console.WriteLine("Imię: " + LOsob[i].Imie + " ");
-                Console.WriteLine("Nazwisko: " + LOsob[i].Nazwisko + " ");
-                Console.WriteLine("Wiek: " + LOsob[i].Wiek + " ");
-                Console.WriteLine("Adres: " + LOsob[i].Adres + " ");
-                Console.WriteLine("Pesel: " + LOsob[i].Pesel + " ");
-                Console.WriteLine("Nr telefonu: \n" + LOsob[i].NrTelefonu);
+                Console.WriteLine("Imię: " + persons[i].FirstName + " ");
+                Console.WriteLine("Name: " + persons[i].Name + " ");
+                Console.WriteLine("Age: " + persons[i].Age + " ");
+                Console.WriteLine("Address: " + persons[i].Address + " ");
+                Console.WriteLine("Pesel: " + persons[i].Pesel + " ");
+                Console.WriteLine("Nr telefonu: " + persons[i].PhoneNumber);
             }
             
         }

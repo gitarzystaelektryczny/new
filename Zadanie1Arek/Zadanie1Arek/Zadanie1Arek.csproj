@@ -44,9 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IStorable.cs" />
-    <Compile Include="ListaOsob.cs" />
-    <Compile Include="Osoba.cs" />
-    <Compile Include="PokazMenu.cs" />
+    <Compile Include="PersonsList.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
