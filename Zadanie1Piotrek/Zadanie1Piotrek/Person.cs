@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zadanie1Piotrek
 {
-    class Person
+    public class Person
     {
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
@@ -17,21 +17,17 @@ namespace Zadanie1Piotrek
             get { return pesel; }
             set
             {
-                if (value.Length == 11)
-                    {
-                        pesel = value;
-                    }
+                if (Validators.ValidatePesel(ref value))
+                {
+                    pesel = value;
+                }
+
                 else
-                    {
-                        Console.WriteLine("Błąd! Wprowadziłeś {0} znaków. Wprowadź 11 cyfrowy numer PESEL", 
-                                            value.Length);
-                    }
+                {
+                    //TODO: hmmm...?
+                }
             }
-                
         }
-
-
-
 
         public Person() { }
         public Person(string imie, string nazwisko, int wiek)
@@ -42,7 +38,6 @@ namespace Zadanie1Piotrek
         }
         public Person(string imie, string nazwisko, int wiek, string pesel) : this(imie, nazwisko, wiek)
         {
-
             Pesel = pesel;
         }
 

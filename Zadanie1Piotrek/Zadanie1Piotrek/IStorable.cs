@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace Zadanie1Piotrek
 {
     interface IStorable
-    {        
-        void AddPerson();
-        void ShowPeople();
+    {
+        void AddPerson(Person person);
+        List<Person> GetAllPersons();
     }
 }

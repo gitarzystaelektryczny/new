@@ -44,11 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IStorable.cs" />
-    <Compile Include="ListPerson.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="MemoryStorage.cs" />
+    <Compile Include="ConsoleMenu.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
