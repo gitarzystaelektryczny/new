@@ -10,8 +10,8 @@ namespace Zadanie1Piotrek
     {        
         static void Main(string[] args)
         {
-            Menu oMenu = new Menu();
-            oMenu.Show();
+            ConsoleMenu menu = new ConsoleMenu();
+            menu.Ul();
         }
     }
 }
