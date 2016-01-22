@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IStorable.cs" />
-    <Compile Include="PersonsList.cs" />
+    <Compile Include="MemoryStorage.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
