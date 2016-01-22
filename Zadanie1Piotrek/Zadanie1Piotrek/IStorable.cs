@@ -8,5 +8,7 @@ namespace Zadanie1Piotrek
 {
     interface IStorable
     {
+        void AddPerson(Person person);
+        List<Person> GetAllPersons();
     }
 }
