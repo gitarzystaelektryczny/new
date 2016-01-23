@@ -12,7 +12,7 @@ namespace Zadanie1Arek
 
         static void Main(string[] args)
         {
-            Menu menu = new Menu();  //czy dobrze nazwałem obiekt?
+            ConsolMenu menu = new ConsolMenu(); 
             
             menu.ShowMenu(); 
 

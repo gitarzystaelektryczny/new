@@ -8,14 +8,11 @@ namespace Zadanie1Arek
 {
     internal class MemoryStorage : IStorable
     {
-        private List<Person> persons = new List<Person>();
-        private Person person = new Person();                          
+        private List<Person> persons = new List<Person>();                         
 
         public void AddPerson(Person person)
-        {
-                       
+        {           
             persons.Add(person);
-
         }
 
        
