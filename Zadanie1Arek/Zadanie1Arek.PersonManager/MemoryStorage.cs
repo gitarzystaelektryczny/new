@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zadanie1Arek
+namespace Zadanie1Arek.PersonManager
 {
-    internal class MemoryStorage : IStorable
+    public class MemoryStorage : IStorable
     {
         private List<Person> persons = new List<Person>();                         
 
@@ -20,5 +20,7 @@ namespace Zadanie1Arek
         {
             return persons;
         }
+
+       
     }
 }

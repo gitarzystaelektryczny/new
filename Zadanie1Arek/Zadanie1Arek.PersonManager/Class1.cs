@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zadanie1Arek
+namespace Zadanie1Arek.PersonManager
 {
-    interface IStorable
+    public class Class1
     {
-        void AddPerson(Person person);
-        List<Person> GetAllPersons();
     }
 }

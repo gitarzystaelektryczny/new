@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zadanie1Arek
+namespace Zadanie1Arek.PersonManager
 {
-    internal class Person
+    [Serializable]
+    public class Person
     {
         public string FirstName { get; set; }
         public string Name { get; set; }

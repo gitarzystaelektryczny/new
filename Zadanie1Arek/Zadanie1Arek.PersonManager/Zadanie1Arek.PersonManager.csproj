@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{858A6CF4-F8CD-4A1C-A00B-C2F0E4A57C24}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{04DFE74B-4C6D-4E61-BDCE-E4A306B49D59}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Zadanie1Arek</RootNamespace>
-    <AssemblyName>Zadanie1Arek</AssemblyName>
+    <RootNamespace>Zadanie1Arek.PersonManager</RootNamespace>
+    <AssemblyName>Zadanie1Arek.PersonManager</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,18 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleMenu.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="FileStorage.cs" />
+    <Compile Include="IStorable.cs" />
+    <Compile Include="MemoryStorage.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Zadanie1Arek.PersonManager\Zadanie1Arek.PersonManager.csproj">
-      <Project>{04dfe74b-4c6d-4e61-bdce-e4a306b49d59}</Project>
-      <Name>Zadanie1Arek.PersonManager</Name>
-    </ProjectReference>
+    <Compile Include="BinarySerializer.cs" />
+    <Compile Include="Validators.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

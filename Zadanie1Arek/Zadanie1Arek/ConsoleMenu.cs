@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zadanie1Arek.PersonManager;
 
 namespace Zadanie1Arek
 {
-    internal class ConsolMenu
-    { 
-        private MemoryStorage person = new MemoryStorage();
+    internal class ConsoleMenu
+    {
+        IStorable _storage;
         
+        public ConsoleMenu(IStorable storage)
+        {
+            this._storage = storage;
+        }
+
+                             
         private Person ConsoleRead() 
         {
             Person personView = new Person();
@@ -18,40 +25,34 @@ namespace Zadanie1Arek
             personView.FirstName = Console.ReadLine();
             Console.WriteLine("Podaj nazwisko: ");
             personView.Name = Console.ReadLine();
-
             Console.WriteLine("Podaj wiek: ");
-            string _age = Console.ReadLine();
-            personView.Age = ConsolValidators.ToInteger(_age);
-
+            personView.Age = int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj pesel: ");
-            string _pesel = Console.ReadLine();
-            personView.Pesel = ConsolValidators.IsInteger(_pesel);
-
+            personView.Pesel = Console.ReadLine();
             Console.WriteLine("Podaj nr telefonu: ");
-            string _phone = Console.ReadLine();
-            personView.PhoneNumber = ConsolValidators.IsInteger(_phone);
-
+            personView.PhoneNumber = Console.ReadLine();
+                    
             return personView;
         }
 
         private void ConsoleView()  
         {
-            if (person.GetAllPersons().Count<Person>() != 0)
+            if (_storage.GetAllPersons().Count<Person>() != 0)
             {
                 Console.WriteLine("OSOBY ZNAJDUJĄCE SIĘ NA LIŚCIE TO: \n\r");
 
-                foreach (var person in person.GetAllPersons())
+                foreach (var p in _storage.GetAllPersons())
                 {
-                    Console.WriteLine("Imię: " + person.FirstName);
-                    Console.WriteLine("Nazwisko: " + person.Name);
-                    Console.WriteLine("Wiek: " + person.Age);
-                    Console.WriteLine("Pesel: " + person.Pesel);
-                    Console.WriteLine("Numer telefonu: " + person.PhoneNumber);
+                    Console.WriteLine("Imię: " + p.FirstName);
+                    Console.WriteLine("Nazwisko: " + p.Name);
+                    Console.WriteLine("Wiek: " + p.Age);
+                    Console.WriteLine("Pesel: " + p.Pesel);
+                    Console.WriteLine("Numer telefonu: " + p.PhoneNumber);
                 }
             }
             else
             {
-                ConsolValidators.ColourStatement("\nLista jest obecnie pusta. Uzupełnij ją!\n");
+                Console.WriteLine("\nLista jest obecnie pusta. Uzupełnij ją!\n");
             } 
         }
 
@@ -66,7 +67,7 @@ namespace Zadanie1Arek
                 switch (a)
                 {
                     case 1:
-                        person.AddPerson(ConsoleRead());
+                        _storage.AddPerson(ConsoleRead());
                         ShowMenu();
                         break;
                     case 2:
@@ -80,7 +81,7 @@ namespace Zadanie1Arek
                         break;
 
                     default:
-                        ConsolValidators.ColourStatement("\nWybierz jedną z opcji wskazaną w MENU!\n");
+                        Console.WriteLine("\nWybierz jedną z opcji wskazaną w MENU!\n");
                         ShowMenu();
                         break;
                        
@@ -89,7 +90,7 @@ namespace Zadanie1Arek
             catch (Exception)
             {
 
-                ConsolValidators.ColourStatement("\nWybierz jedną z opcji wskazaną w MENU!\n");
+                Console.WriteLine("\nWybierz jedną z opcji wskazaną w MENU!\n");
                 ShowMenu();
             }
            
