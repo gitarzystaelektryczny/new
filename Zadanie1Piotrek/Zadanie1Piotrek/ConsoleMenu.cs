@@ -3,31 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zadanie1Piotrek.PersonManager;
 
 namespace Zadanie1Piotrek
 {
     public class ConsoleMenu
     {
-        MemoryStorage people = new MemoryStorage();    
-            
+        IStorable _storage;
+      
+        public ConsoleMenu(IStorable storage)
+        {
+            this._storage = storage;
+        }
+        
         private void Add()
-        {            
+        {
+            Person person = new Person();         
             Console.WriteLine("\n\rWprowadź dane nowej osoby.\n\r");
             Console.WriteLine("Podaj imię: ");
-            string a = Console.ReadLine();
+            person.Imie = Console.ReadLine();
             Console.WriteLine("Podaj nazwisko: ");
-            string b = Console.ReadLine();
+            person.Nazwisko = Console.ReadLine();
             Console.WriteLine("Podaj wiek: ");
-            int c = int.Parse(Console.ReadLine());         
+            person.Wiek = int.Parse(Console.ReadLine());         
             Console.WriteLine("Podaj pesel: ");
-            string d = Console.ReadLine();
-
-            people.AddPerson(new Person(a,b,c,d));
-            //TODO: wyrzucić lokalne pola abcd
+            person.Pesel= Console.ReadLine();
+            
+            try
+            {
+                _storage.AddPerson(person);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
         private void View()
         {
-            foreach (var person in people.GetAllPersons())
+            foreach (var person in _storage.GetAllPersons())
             {
                 Console.WriteLine("Imię: " + person.Imie);
                 Console.WriteLine("Nazwisko: " + person.Nazwisko);
