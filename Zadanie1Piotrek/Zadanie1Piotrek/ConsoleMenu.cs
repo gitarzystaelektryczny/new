@@ -52,6 +52,10 @@ namespace Zadanie1Piotrek
         {
             //TODO: Zabezpieczyć menu!
             Console.WriteLine("MENU:\n1\r1- Dodaj osobę\n2- Wyświetl Listę osób\n3- Wyjście z Aplikacji");
+
+
+       try
+       {                
             int i = int.Parse(Console.ReadLine());
 
 
@@ -71,6 +75,12 @@ namespace Zadanie1Piotrek
                 default:
                     Ul();
                     break;
+            }
+       }
+       catch (Exception)
+            {
+                Console.WriteLine("Lista jest pusta!");
+                Ul();
             }
         }
     }
