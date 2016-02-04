@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Zadanie1Piotrek.PersonManager;
 
-namespace Zadanie1Piotrek
+namespace Zadanie1Piotrek.ConsoleApp
 {
     public class ConsoleMenu
     {
@@ -27,8 +27,16 @@ namespace Zadanie1Piotrek
             Console.WriteLine("Podaj wiek: ");
             person.Wiek = int.Parse(Console.ReadLine());         
             Console.WriteLine("Podaj pesel: ");
-            person.Pesel= Console.ReadLine();
-            
+            try
+            {
+                person.Pesel = Console.ReadLine();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Użytkownik nie zostanie dodany do bazy. Powód: {0}", ex.Message);
+                return;
+            }
+
             try
             {
                 _storage.AddPerson(person);
@@ -40,7 +48,14 @@ namespace Zadanie1Piotrek
         }
         private void View()
         {
-            foreach (var person in _storage.GetAllPersons())
+            List<Person> people = _storage.GetAllPersons();
+
+            if (!people.Any())
+            {
+                Console.WriteLine("Lista jest pusta!");
+                return;
+            }
+            foreach (var person in people)
             {
                 Console.WriteLine("Imię: " + person.Imie);
                 Console.WriteLine("Nazwisko: " + person.Nazwisko);
@@ -50,10 +65,8 @@ namespace Zadanie1Piotrek
         }
         public void Ul()
         {
-            //TODO: Zabezpieczyć menu!
             Console.WriteLine("MENU:\n1\r1- Dodaj osobę\n2- Wyświetl Listę osób\n3- Wyjście z Aplikacji");
-
-
+            
        try
        {                
             int i = int.Parse(Console.ReadLine());
@@ -77,9 +90,9 @@ namespace Zadanie1Piotrek
                     break;
             }
        }
-       catch (Exception)
+       catch (Exception ex)
             {
-                Console.WriteLine("Lista jest pusta!");
+                Console.WriteLine(ex.Message);
                 Ul();
             }
         }

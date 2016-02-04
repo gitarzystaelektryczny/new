@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Zadanie1Piotrek.PersonManager;
 
-namespace Zadanie1Piotrek
+namespace Zadanie1Piotrek.ConsoleApp
 {
      class Program
     {        

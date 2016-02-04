@@ -8,31 +8,35 @@ using System.IO;
 namespace Zadanie1Piotrek.PersonManager
 {
     public class FileStorage : IStorable
-    {
-        private List<Person> people = new List<Person>();
+    {        
         private string path = "person.xml";
-        string folder = Directory.GetCurrentDirectory();
-
-
+                
         public void AddPerson(Person person)
         {
             if (File.Exists(path))
             {
-                GetAllPersons();
+                List<Person> people = GetAllPersons();
                 people.Add(person);
-                XMLSerializer.Serialization(people, (path));
+                XMLSerializer.Serialization(people, path);                
             }
             else
             {
+                List<Person> people = new List<Person>();
                 people.Add(person);
-                XMLSerializer.Serialization(people, (path));
+                XMLSerializer.Serialization(people, path);
             }
         }
 
         public List<Person> GetAllPersons()
         {
-            people=(XMLSerializer.Deserialization(path));
-            return people;
+            if (File.Exists(path))
+            {                
+                return XMLSerializer.Deserialization(path);
+            }
+            else
+            {
+                return new List<Person>();
+            }
         }
     }
 }

@@ -8,6 +8,16 @@ namespace Zadanie1Piotrek.PersonManager
 {
     public static class Validators
     {
+        public static bool PersonNotEmpty(Person person)
+        {
+            bool result = false;
+
+            if ((person.Imie != null) && (person.Nazwisko != null) && (person.Wiek != 0) && (person.Pesel !=null))
+            {
+                result =true;
+            }
+            return result;
+        }
         
         public static bool ValidatePesel(ref string szPesel)
         {
