@@ -13,72 +13,76 @@ namespace Zadanie1Piotrek.FormsApp
 {
     public partial class AddPersonForm : Form
     {
-        PeopleListForm peopleListForm = new PeopleListForm();
-        FileStorage fileStorage = new FileStorage();
+        IStorable _storage;
         Person person = new Person();
-        public AddPersonForm()
+       
+        public AddPersonForm(IStorable storage)
         {
-            InitializeComponent();
+            this._storage = storage;
+            InitializeComponent();           
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
-            person.Imie = textBox1.Text;
+            person.Imie = txtFirstName.Text;
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void txtLastName_TextChanged(object sender, EventArgs e)
         {
-            person.Nazwisko = textBox2.Text;
+            person.Nazwisko = txtLastName.Text;
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void txtAge_TextChanged(object sender, EventArgs e)
         {
-            try
+            if (txtAge.Text != "")
             {
-                person.Wiek = Convert.ToInt32(textBox3.Text);
+                int wiek;
+
+                if (int.TryParse(txtAge.Text, out wiek))
+                {
+                    person.Wiek = wiek;
+                }
+                else
+                {
+                    MessageBox.Show("Wiek musi być wartością liczbową!");
+                    txtAge.Text = "";
+                }
             }
-
-            //czemu dwa exceptiony idą jeden po drugim?
-            catch (Exception ex)
-            {                
-                MessageBox.Show(ex.Message, "łoo matko!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBox3.Text = "";
-            }                  
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void txtPesel_TextChanged(object sender, EventArgs e)
         {
-            if (textBox4.Text.Length ==11)
-           try
-                {
-                    person.Pesel = textBox4.Text;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error, karwasz twarz!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox4.Text = "";
-                }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-                if (Validators.PersonNotEmpty(person))
+            {
+                if (txtPesel.Text.Length == 11)
+                    try
                     {
-                    fileStorage.AddPerson(person);
-                    peopleListForm.Show();
-                    peopleListForm.ViewList();
-                    this.Close();
+                        person.Pesel = txtPesel.Text;
+                        lblNotEmpty.Visible = false;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error, karwasz twarz!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtPesel.Text = null;
                     }
                 else
-                    {
-                    label6.Visible = true;
-                    }
+                {
+                    lblNotEmpty.Text = "pesel jest za krótki";
+                }
+            }
         }
-
-        private void AddPersonForm_FormClosing(object sender, FormClosingEventArgs e)
+        
+        private void AddPersonButton_Click(object sender, EventArgs e)
         {
-            peopleListForm.Show();
+            if (Validators.PersonNotEmpty(person))
+            {
+                _storage.AddPerson(person);
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            }
+            else
+            {
+                lblNotEmpty.Visible = true;
+            }
         }
     }
-}
+    }
+

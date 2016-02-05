@@ -29,28 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wiekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peselDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.AddPersonButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(105, 377);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 37);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Wczytaj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -97,25 +85,24 @@
             // 
             this.personBindingSource.DataSource = typeof(Zadanie1Piotrek.PersonManager.Person);
             // 
-            // button2
+            // AddPersonButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(308, 377);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 37);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Dodaj";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.AddPersonButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddPersonButton.Location = new System.Drawing.Point(197, 377);
+            this.AddPersonButton.Name = "AddPersonButton";
+            this.AddPersonButton.Size = new System.Drawing.Size(106, 37);
+            this.AddPersonButton.TabIndex = 3;
+            this.AddPersonButton.Text = "Dodaj";
+            this.AddPersonButton.UseVisualStyleBackColor = true;
+            this.AddPersonButton.Click += new System.EventHandler(this.AddPersonButton_Click);
             // 
             // PeopleListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 426);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.AddPersonButton);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "PeopleListForm";
@@ -135,8 +122,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wiekDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn peselDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource personBindingSource;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddPersonButton;
     }
 }
 

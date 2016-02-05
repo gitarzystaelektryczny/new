@@ -13,28 +13,27 @@ namespace Zadanie1Piotrek.FormsApp
 {
     public partial class PeopleListForm : Form
     {
+        IStorable _storage;
 
-        public PeopleListForm()
+        public PeopleListForm(IStorable storage)
         {
+            this._storage = storage;
             InitializeComponent();
-        }
-        public void ViewList()
-        {
-            FileStorage fs = new FileStorage();
-            dataGridView1.DataSource = fs.GetAllPersons();
-        }
-      
-        private void button1_Click(object sender, EventArgs e)
-        {
             ViewList();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void ViewList()
         {
-            AddPersonForm addPersonForm = new AddPersonForm();
-            addPersonForm.Show();
-            this.Hide();
+            dataGridView1.DataSource = _storage.GetAllPersons();
         }
+
+        private void AddPersonButton_Click(object sender, EventArgs e)
+        {
+            AddPersonForm addPersonForm = new AddPersonForm(new FileStorage());
+            if (addPersonForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                ViewList();
+            }
+        }        
 
         private void PeopleListForm_FormClosing(object sender, FormClosingEventArgs e)
         {

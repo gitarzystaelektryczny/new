@@ -17,7 +17,7 @@ namespace Zadanie1Piotrek.FormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PeopleListForm());
+            Application.Run(new PeopleListForm(new FileStorage()));
         }
     }
 }
