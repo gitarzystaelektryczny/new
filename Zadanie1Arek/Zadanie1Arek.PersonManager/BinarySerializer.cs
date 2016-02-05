@@ -8,7 +8,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Zadanie1Arek.PersonManager
 {
-    public class Serializators<T>  //co to jest T - jakiś uogólniony objekt?
+    public class Serializators<T> 
     {
         public static void BinarySerializer (string path, T obj)
         {

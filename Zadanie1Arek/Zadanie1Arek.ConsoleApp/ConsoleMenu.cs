@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Zadanie1Arek.PersonManager;
 
-namespace Zadanie1Arek
+namespace Zadanie1Arek.ConsoleApp
 {
     internal class ConsoleMenu
     {
@@ -24,7 +24,7 @@ namespace Zadanie1Arek
             Console.WriteLine("Podaj imię: ");
             personView.FirstName = Console.ReadLine();
             Console.WriteLine("Podaj nazwisko: ");
-            personView.Name = Console.ReadLine();
+            personView.LastName = Console.ReadLine();
             Console.WriteLine("Podaj wiek: ");
             personView.Age = int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj pesel: ");
@@ -44,7 +44,7 @@ namespace Zadanie1Arek
                 foreach (var p in _storage.GetAllPersons())
                 {
                     Console.WriteLine("Imię: " + p.FirstName);
-                    Console.WriteLine("Nazwisko: " + p.Name);
+                    Console.WriteLine("Nazwisko: " + p.LastName);
                     Console.WriteLine("Wiek: " + p.Age);
                     Console.WriteLine("Pesel: " + p.Pesel);
                     Console.WriteLine("Numer telefonu: " + p.PhoneNumber);
@@ -52,7 +52,7 @@ namespace Zadanie1Arek
             }
             else
             {
-                Console.WriteLine("\nLista jest obecnie pusta. Uzupełnij ją!\n");
+                Console.WriteLine("\nLista jest pusta. Uzupełnij ją!\n");
             } 
         }
 

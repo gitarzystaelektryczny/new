@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Zadanie1Arek.PersonManager;
 
-namespace Zadanie1Arek
+namespace Zadanie1Arek.ConsoleApp
 {
     internal class Program
     {

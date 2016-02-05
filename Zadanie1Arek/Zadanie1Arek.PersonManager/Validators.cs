@@ -6,49 +6,31 @@ using System.Threading.Tasks;
 
 namespace Zadanie1Arek.PersonManager
 {
-    public class Validators   //TODO zrobić wszystkie metody od nowa. Nie wiązać z konsolą!
+    public class Validators   
     {
-        //public static int IsPesel(string s)   //TODO: stworzyc metodę sprawdzającą ilość cyfr w peselu
-        //{
-        //    if (s.Length == 11)
-        //    {
-        //        return 1;
-        //    }
-        //    return 0;
-        //}
+        public static bool IsDigit(string s)   
+        {
+            double temp;
 
-        //public static int ToInteger(string s)
-        //{
-        //    int result;
-        //    do
-        //    {
-        //        if (int.TryParse(s, out result))
-        //        {
-        //            result = int.Parse(s);
-        //            return result;  
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Błąd: Musisz podać wartość liczbową! Spóbuj jeszcze raz!");
-        //            s = Console.ReadLine();
-        //        }
-
-        //    } while (result == 0);
-        //    return -1;
-        //} 
-
-        //public static string IsInteger(string s)
-        //{
-        //    int result;
-            
-        //        if (int.TryParse(s, out result))
-        //        {
-        //            return s;
-        //        }
-        //        else
-        //        {
-        //            throw new Exception("Błąd! Musisz podać cyfry!");
-        //        }  
+            if (double.TryParse(s, out temp))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+        
+            
+        public static bool IsPersonNotEmpty(Person person)
+        {
+            if (person.FirstName != null && person.LastName != null && person.Age != 0 && person.Pesel != null && person.PhoneNumber != null)
+            {
+                return true;
+            }
+            return false;
+        }           
     }
+}
 

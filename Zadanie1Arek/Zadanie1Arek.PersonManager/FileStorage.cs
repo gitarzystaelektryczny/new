@@ -3,27 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 using System.IO;
-
 
 namespace Zadanie1Arek.PersonManager
 {
     public class FileStorage : IStorable
-    {
-        private List<Person> persons = new List<Person>();
-        string path = @"C:\Temp\person.bin";  //TODO: create directory
-
+    {        
+        private string path = "person.xml";
+                
         public void AddPerson(Person person)
         {
-            persons.Add(person);
-            Serializators<List<Person>>.BinarySerializer(path, persons);
+            List<Person> persons = GetAllPersons();
+            if (File.Exists(path))
+            {                
+                persons.Add(person);
+                XMLSerializer.Serialization(persons, path);
+            }
+            else
+            {
+                persons.Add(person);
+                XMLSerializer.Serialization(persons, path);
+            }
         }
 
         public List<Person> GetAllPersons()
         {
-            persons = Serializators<List<Person>>.Deserialize(path);
-            return persons;
+            if (File.Exists(path))
+            {                
+                return XMLSerializer.Deserialization(path);
+            }
+            else
+            {
+                return new List<Person>();
+            }
         }
     }
 }
