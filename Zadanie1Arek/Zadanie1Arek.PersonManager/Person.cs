@@ -17,5 +17,14 @@ namespace Zadanie1Arek.PersonManager
         public string PhoneNumber { get; set; }
 
         public Person() { }
+
+        public Person (string firstName, string lastName, int age, string pesel, string phoneNumber)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
+            Pesel = pesel;
+            PhoneNumber = phoneNumber;
+        }
     }
 }

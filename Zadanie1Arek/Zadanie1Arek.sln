@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadanie1Arek.PersonManager"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadanie1Arek.FormsApp", "Zadanie1Arek.FormsApp\Zadanie1Arek.FormsApp.csproj", "{1A83CB0C-7286-46D7-A8C4-A6070C1F17B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadanie1Arek.DbRepository", "Zadanie1Arek.DbRepository\Zadanie1Arek.DbRepository.csproj", "{9FB8408D-912F-49D1-873E-6A798FA26A50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{858A6CF4-F8CD-4A1C-A00B-C2F0E4A57C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{858A6CF4-F8CD-4A1C-A00B-C2F0E4A57C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858A6CF4-F8CD-4A1C-A00B-C2F0E4A57C24}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{858A6CF4-F8CD-4A1C-A00B-C2F0E4A57C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{858A6CF4-F8CD-4A1C-A00B-C2F0E4A57C24}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04DFE74B-4C6D-4E61-BDCE-E4A306B49D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -27,6 +30,10 @@ Global
 		{1A83CB0C-7286-46D7-A8C4-A6070C1F17B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A83CB0C-7286-46D7-A8C4-A6070C1F17B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A83CB0C-7286-46D7-A8C4-A6070C1F17B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB8408D-912F-49D1-873E-6A798FA26A50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB8408D-912F-49D1-873E-6A798FA26A50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB8408D-912F-49D1-873E-6A798FA26A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB8408D-912F-49D1-873E-6A798FA26A50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
