@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zadanie1Piotrek.PersonManager;
+using Zadanie1Piotrek.DbRepository;
 
 namespace Zadanie1Piotrek.FormsApp
 {
@@ -28,7 +29,7 @@ namespace Zadanie1Piotrek.FormsApp
 
         private void AddPersonButton_Click(object sender, EventArgs e)
         {
-            AddPersonForm addPersonForm = new AddPersonForm(new FileStorage());
+            AddPersonForm addPersonForm = new AddPersonForm(new DbStorage());
             if (addPersonForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ViewList();

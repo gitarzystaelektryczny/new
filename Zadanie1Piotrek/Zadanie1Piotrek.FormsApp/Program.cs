@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zadanie1Piotrek.PersonManager;
+using Zadanie1Piotrek.DbRepository;
 
 namespace Zadanie1Piotrek.FormsApp
 {
@@ -17,7 +18,7 @@ namespace Zadanie1Piotrek.FormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PeopleListForm(new FileStorage()));
+            Application.Run(new PeopleListForm(new DbStorage()));
         }
     }
 }

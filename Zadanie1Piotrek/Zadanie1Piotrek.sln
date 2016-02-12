@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadanie1Piotrek.PersonManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadanie1Piotrek.FormsApp", "Zadanie1Piotrek.FormsApp\Zadanie1Piotrek.FormsApp.csproj", "{E99C3FE1-C00B-495B-8854-997134D3871F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadanie1Piotrek.DbRepository", "Zadanie1Piotrek.DbRepository\Zadanie1Piotrek.DbRepository.csproj", "{8078FD6C-BE4D-418C-8A4F-7FCF5BF7E18B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E99C3FE1-C00B-495B-8854-997134D3871F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E99C3FE1-C00B-495B-8854-997134D3871F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E99C3FE1-C00B-495B-8854-997134D3871F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8078FD6C-BE4D-418C-8A4F-7FCF5BF7E18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8078FD6C-BE4D-418C-8A4F-7FCF5BF7E18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8078FD6C-BE4D-418C-8A4F-7FCF5BF7E18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8078FD6C-BE4D-418C-8A4F-7FCF5BF7E18B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
