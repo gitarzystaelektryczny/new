@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagerArek.ConsoleApp", "WarehouseManagerArek.ConsoleApp\WarehouseManagerArek.ConsoleApp.csproj", "{E58F7B65-BCC6-49F8-B34C-9CAEB022B6BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagerArek.CurrencyXml", "WarehouseManagerArek.CurrencyXml\WarehouseManagerArek.CurrencyXml.csproj", "{F9253BBA-3363-49C7-93FC-D9DE16E2BB93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagerArek.DataAccessLayer", "WarehouseManagerArek.DataAccessLayer\WarehouseManagerArek.DataAccessLayer.csproj", "{B1498BE9-C53B-4DF5-B12C-FBCBC26A8289}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagerArek.WinFormsApp", "WarehouseManagerArek.WinFormsApp\WarehouseManagerArek.WinFormsApp.csproj", "{E8CF8068-9840-47C4-934D-515ED1EFCF52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagerArek.Models", "WarehouseManagerArek.Models\WarehouseManagerArek.Models.csproj", "{F3C083EF-40CA-489D-8BB9-4E5B47D332EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E58F7B65-BCC6-49F8-B34C-9CAEB022B6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E58F7B65-BCC6-49F8-B34C-9CAEB022B6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E58F7B65-BCC6-49F8-B34C-9CAEB022B6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E58F7B65-BCC6-49F8-B34C-9CAEB022B6BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9253BBA-3363-49C7-93FC-D9DE16E2BB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9253BBA-3363-49C7-93FC-D9DE16E2BB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9253BBA-3363-49C7-93FC-D9DE16E2BB93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9253BBA-3363-49C7-93FC-D9DE16E2BB93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1498BE9-C53B-4DF5-B12C-FBCBC26A8289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1498BE9-C53B-4DF5-B12C-FBCBC26A8289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1498BE9-C53B-4DF5-B12C-FBCBC26A8289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1498BE9-C53B-4DF5-B12C-FBCBC26A8289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8CF8068-9840-47C4-934D-515ED1EFCF52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8CF8068-9840-47C4-934D-515ED1EFCF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8CF8068-9840-47C4-934D-515ED1EFCF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8CF8068-9840-47C4-934D-515ED1EFCF52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C083EF-40CA-489D-8BB9-4E5B47D332EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C083EF-40CA-489D-8BB9-4E5B47D332EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C083EF-40CA-489D-8BB9-4E5B47D332EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C083EF-40CA-489D-8BB9-4E5B47D332EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="ModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AddressTypeSet" EntityType="Model.AddressType" />
+          <AssociationSet Name="AddressAddressType" Association="Model.AddressAddressType">
+            <End Role="Address" EntitySet="AddressSet" />
+            <End Role="AddressType" EntitySet="AddressTypeSet" />
+          </AssociationSet>
+          <EntitySet Name="AddressSet" EntityType="Model.Address" />
+          <EntitySet Name="CurrencySet" EntityType="Model.Currency" />
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="IDAddress" />
+          </Key>
+          <Property Name="IDAddress" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Country" Type="String" Nullable="false" />
+          <Property Name="City" Type="String" Nullable="false" />
+          <Property Name="Street" Type="String" Nullable="false" />
+          <Property Name="PostalCode" Type="String" Nullable="false" />
+          <Property Name="HouseNumber" Type="Int32" Nullable="false" />
+          <Property Name="ApartmentNumber" Type="Int32" Nullable="false" />
+          <Property Name="PhoneMobile" Type="String" Nullable="false" />
+          <Property Name="PhoneOffice" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <NavigationProperty Name="AddressType1" Relationship="Model.AddressAddressType" FromRole="Address" ToRole="AddressType" />
+          <Property Name="IDAddressType" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AddressType">
+          <Key>
+            <PropertyRef Name="IDAddressType" />
+          </Key>
+          <Property Name="IDAddressType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AddressMain" Type="String" Nullable="false" />
+          <Property Name="AddressForwarding" Type="String" Nullable="false" />
+          <Property Name="AddressRegistered" Type="String" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="Model.AddressAddressType" FromRole="AddressType" ToRole="Address" />
+        </EntityType>
+        <Association Name="AddressAddressType">
+          <End Type="Model.Address" Role="Address" Multiplicity="1" />
+          <End Type="Model.AddressType" Role="AddressType" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="IDCurrency" />
+          </Key>
+          <Property Name="IDCurrency" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model" />
+        <Alias Key="Target" Value="Model.Store" />
+        <EntityContainerMapping CdmEntityContainer="ModelContainer" StorageEntityContainer="ModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
