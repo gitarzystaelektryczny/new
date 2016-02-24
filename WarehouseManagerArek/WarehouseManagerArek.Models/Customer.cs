@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace WarehouseManagerArek.Models
 {
-    public class Customer
+    /// <summary>
+    /// klient
+    /// </summary>
+    public class Customer : Person
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public Address AddressMain { get; set; }
-        public Address AddressForwarding { get; set; }
-        public Address RegisteredAddress { get; set; }
+        /// <summary>
+        /// data rejestracji w systemie(klient)
+        /// </summary>
+        public DateTime RegistrationDate { get; set; }
     }
 }

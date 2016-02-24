@@ -6,12 +6,34 @@ using System.Threading.Tasks;
 
 namespace WarehouseManagerArek.Models
 {
-    class Product
+    /// <summary>
+    /// produkt
+    /// </summary>
+    public class Product
     {
+        /// <summary>
+        /// id(produkt)
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
+        /// nazwa(produkt)
+        /// </summary>
         public string Name { get; set; }
-        public string Category { get; set; }
+        /// <summary>
+        /// kod kreskowy(produkt)
+        /// </summary>
         public int Barcode { get; set; }
-        public double Price { get; set; }
+        /// <summary>
+        /// cena(produkt)
+        /// </summary>
+        public decimal Price { get; set; }
+        /// <summary>
+        /// ilość(produkt)
+        /// </summary>
         public int Quantity { get; set; }
+        /// <summary>
+        /// kategoria(produkt)
+        /// </summary>
+        public ProductCategory Category { get; set; }
     }
 }

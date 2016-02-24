@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 namespace WarehouseManagerArek.Models
 {
     /// <summary>
-    /// pracownik
+    /// typ adresu
     /// </summary>
-    public class Employee : Person
+    public enum AddressType
     {
         /// <summary>
-        /// stanowisko(pracownik)
+        /// adres zamieszkania
         /// </summary>
-        public string Position { get; set; } 
+        AddressMain = 1,
         /// <summary>
-        /// pensja(pracownik)
+        /// adres do korespondencji
         /// </summary>
-        public decimal Salary { get; set; }
+        AddressForwarding = 2,
         /// <summary>
-        /// data zatrudnienia(pracownik)
+        /// adres zameldowania
         /// </summary>
-        public DateTime EmploymentDate { get; set; }
+        AddressRegistered = 3
     }
 }

@@ -7,13 +7,17 @@ using WarehouseManagerArek.CurrencyXml;
 
 namespace WarehouseManagerArek.ConsoleApp
 {
-    class ConsoleTest
+    public class ConsoleTest
     {   
+        /// <summary>
+        /// Metoda wyświetlająca listę walut w konsoli
+        /// </summary>
         public void ShowCurrency()
         {
+            CurrencyRate currencyRate = new CurrencyRate();
             try
             {
-                foreach (var i in CurrencyRate.GetCurrency())
+                foreach (var i in currencyRate.GetCurrency(currencyRate.GetXml()))
                 {
                     Console.WriteLine(i.Name);
                     Console.WriteLine(i.Converter);

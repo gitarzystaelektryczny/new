@@ -10,25 +10,37 @@ using System.Xml.XPath;
 
 namespace WarehouseManagerArek.CurrencyXml
 {
+    /// <summary>
+    /// Klasa pobierająca aktualny kurs walut i zwracająca listę walut
+    /// </summary>
     public class CurrencyRate
     {
-        public static List<Currency> GetCurrency()
-        {          
-            string url = "http://www.nbp.pl/kursy/xml/lasta.xml";
-            string xml;
-
+        const string url = "http://www.nbp.pl/kursy/xml/lasta.xml";
+        /// <summary>
+        /// Pobieranie strony xml do string
+        /// </summary>
+        public string GetXml()
+        {
             try
             {
+                string xml;
                 using (var webClient = new WebClient())
                 {
-                    xml = webClient.DownloadString(url);
+                   xml = webClient.DownloadString(url);
                 }
+                return xml;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Bład połączenia!");
+                throw new Exception("Nie można pobrać pliku Xml!", ex);
             }
-
+            
+        }
+        /// <summary>
+        /// Parsowanie xml i zwracanie listy walut
+        /// </summary>
+        public List<Currency> GetCurrency(string xml)
+        {
             try
             {
                 XDocument doc = XDocument.Parse(xml);
@@ -39,15 +51,13 @@ namespace WarehouseManagerArek.CurrencyXml
                         decimal.Parse(pozycja.Element("przelicznik").Value),
                         pozycja.Element("kod_waluty").Value,
                         decimal.Parse(pozycja.Element("kurs_sredni").Value))).ToList();
-
                 return currencyList;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw new Exception("Błąd z plikiem Xml!");
+                throw new Exception("Błąd pliku Xml!", ex);
             }
-           
+               
         }
     }
 }

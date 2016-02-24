@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 namespace WarehouseManagerArek.Models
 {
     /// <summary>
-    /// pracownik
+    /// kategoria produktu
     /// </summary>
-    public class Employee : Person
+    public class ProductCategory
     {
         /// <summary>
-        /// stanowisko(pracownik)
+        /// id(kategoria produktu)
         /// </summary>
-        public string Position { get; set; } 
+        public int Id { get; set; }
         /// <summary>
-        /// pensja(pracownik)
+        /// nazwa(kategoria produktu)
         /// </summary>
-        public decimal Salary { get; set; }
+        public string Name { get; set; }
         /// <summary>
-        /// data zatrudnienia(pracownik)
+        /// opis(kategoria produktu)
         /// </summary>
-        public DateTime EmploymentDate { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WarehouseManagerArek.WinFormsApp
 {
-    partial class MainWindow
+    partial class AddEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // MainWindow
+            // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 366);
-            this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(333, 364);
+            this.Name = "AddEmployee";
+            this.Text = "AddEmployee";
             this.ResumeLayout(false);
 
         }
@@ -44,4 +44,3 @@
         #endregion
     }
 }
-
