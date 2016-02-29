@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WarehouseManagerArek.DataAccessLayer;
 
 namespace WarehouseManagerArek.WinFormsApp
 {
@@ -16,7 +17,8 @@ namespace WarehouseManagerArek.WinFormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new EmployeeManager());
         }
+
     }
 }

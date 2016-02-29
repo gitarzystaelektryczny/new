@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WarehouseManagerArek.WinFormsApp
 {
-    public partial class AddEmployee : Form
+    public partial class FormAddEmployee : Form
     {
-        public AddEmployee()
+        public FormAddEmployee()
         {
             InitializeComponent();
         }

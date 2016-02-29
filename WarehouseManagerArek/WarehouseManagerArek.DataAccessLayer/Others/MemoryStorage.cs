@@ -16,7 +16,6 @@ namespace WarehouseManagerArek.Models
         /// <summary>
         /// dodawanie elementów do listy
         /// </summary>
-        /// <param name="element"></param>
         public void AddElement(T element)
         {
             list.Add(element);
