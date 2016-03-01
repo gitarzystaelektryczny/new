@@ -18,15 +18,14 @@ namespace WarehouseManagerArek.WinFormsApp
     {
         public EmployeeManager()
         {
-            AddTest addTest = new AddTest(5,"Jacek", "Kowalski", "434534553", "345345354", "jacek@gmail.com", "koordynator", 5650, new DateTime(2006, 03, 04));
+            AddTest addTest = new AddTest();
+            addTest.AddEmployee(5,"Jacek", "Kowalski", "434534553", "345345354", "jacek@gmail.com", "koordynator", 5650, new DateTime(2006, 03, 04));
             InitializeComponent();
         }
 
        
         private void EmployeeManager_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'databaseDataSet.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.databaseDataSet.Employee);
             // TODO: This line of code loads data into the 'databaseDataSet1.Employee' table. You can move, or remove it, as needed.
             this.employeeTableAdapter1.Fill(this.databaseDataSet1.Employee);
         }

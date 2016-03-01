@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridViewEmployeeName = new System.Windows.Forms.DataGridView();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new WarehouseManagerArek.WinFormsApp.DatabaseDataSet();
             this.buttonAddEmployee = new System.Windows.Forms.Button();
             this.buttonEditEmployee = new System.Windows.Forms.Button();
             this.buttonDeleteEmployee = new System.Windows.Forms.Button();
@@ -51,13 +50,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.databaseDataSet1 = new WarehouseManagerArek.WinFormsApp.DatabaseDataSet1();
             this.employeeTableAdapter1 = new WarehouseManagerArek.WinFormsApp.DatabaseDataSet1TableAdapters.EmployeeTableAdapter();
-            this.employeeTableAdapter = new WarehouseManagerArek.WinFormsApp.DatabaseDataSetTableAdapters.EmployeeTableAdapter();
+            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewEmployeeName
@@ -67,7 +66,7 @@
             this.dataGridViewEmployeeName.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FirstName,
             this.LastName});
-            this.dataGridViewEmployeeName.DataSource = this.employeeBindingSource;
+            this.dataGridViewEmployeeName.DataSource = this.employeeBindingSource1;
             this.dataGridViewEmployeeName.Location = new System.Drawing.Point(33, 12);
             this.dataGridViewEmployeeName.Name = "dataGridViewEmployeeName";
             this.dataGridViewEmployeeName.Size = new System.Drawing.Size(245, 311);
@@ -77,12 +76,6 @@
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataMember = "Employee";
-            this.employeeBindingSource.DataSource = this.databaseDataSet;
-            // 
-            // databaseDataSet
-            // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // buttonAddEmployee
             // 
@@ -125,7 +118,7 @@
             // 
             // textBoxPhoneMobile
             // 
-            this.textBoxPhoneMobile.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "PhoneMobile", true));
+            this.textBoxPhoneMobile.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "PhoneMobile", true));
             this.textBoxPhoneMobile.Location = new System.Drawing.Point(331, 29);
             this.textBoxPhoneMobile.Name = "textBoxPhoneMobile";
             this.textBoxPhoneMobile.Size = new System.Drawing.Size(192, 20);
@@ -142,7 +135,7 @@
             // 
             // textBoxPhoneOffice
             // 
-            this.textBoxPhoneOffice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "PhoneOffice", true));
+            this.textBoxPhoneOffice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "PhoneOffice", true));
             this.textBoxPhoneOffice.Location = new System.Drawing.Point(331, 68);
             this.textBoxPhoneOffice.Name = "textBoxPhoneOffice";
             this.textBoxPhoneOffice.Size = new System.Drawing.Size(192, 20);
@@ -159,7 +152,7 @@
             // 
             // textBoxMail
             // 
-            this.textBoxMail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Mail", true));
+            this.textBoxMail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "Mail", true));
             this.textBoxMail.Location = new System.Drawing.Point(331, 107);
             this.textBoxMail.Name = "textBoxMail";
             this.textBoxMail.Size = new System.Drawing.Size(192, 20);
@@ -176,7 +169,7 @@
             // 
             // textBoxPosition
             // 
-            this.textBoxPosition.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Position", true));
+            this.textBoxPosition.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "Position", true));
             this.textBoxPosition.Location = new System.Drawing.Point(331, 146);
             this.textBoxPosition.Name = "textBoxPosition";
             this.textBoxPosition.Size = new System.Drawing.Size(192, 20);
@@ -193,7 +186,7 @@
             // 
             // textBoxSalary
             // 
-            this.textBoxSalary.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Salary", true));
+            this.textBoxSalary.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "Salary", true));
             this.textBoxSalary.Location = new System.Drawing.Point(331, 185);
             this.textBoxSalary.Name = "textBoxSalary";
             this.textBoxSalary.Size = new System.Drawing.Size(192, 20);
@@ -210,7 +203,7 @@
             // 
             // textBoxEmploymentDate
             // 
-            this.textBoxEmploymentDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "EmploymentDate", true));
+            this.textBoxEmploymentDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "EmploymentDate", true));
             this.textBoxEmploymentDate.Location = new System.Drawing.Point(331, 224);
             this.textBoxEmploymentDate.Name = "textBoxEmploymentDate";
             this.textBoxEmploymentDate.Size = new System.Drawing.Size(192, 20);
@@ -227,7 +220,6 @@
             // 
             // textBox1
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.databaseDataSet, "Address.Country", true));
             this.textBox1.Location = new System.Drawing.Point(331, 264);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -243,9 +235,10 @@
             // 
             this.employeeTableAdapter1.ClearBeforeFill = true;
             // 
-            // employeeTableAdapter
+            // employeeBindingSource1
             // 
-            this.employeeTableAdapter.ClearBeforeFill = true;
+            this.employeeBindingSource1.DataMember = "Employee";
+            this.employeeBindingSource1.DataSource = this.databaseDataSet1;
             // 
             // FirstName
             // 
@@ -287,8 +280,8 @@
             this.Load += new System.EventHandler(this.EmployeeManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,8 +310,7 @@
         private DatabaseDataSet1 databaseDataSet1;
         private System.Windows.Forms.BindingSource employeeBindingSource;
         private DatabaseDataSet1TableAdapters.EmployeeTableAdapter employeeTableAdapter1;
-        private DatabaseDataSet databaseDataSet;
-        private DatabaseDataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;
+        private System.Windows.Forms.BindingSource employeeBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
     }
