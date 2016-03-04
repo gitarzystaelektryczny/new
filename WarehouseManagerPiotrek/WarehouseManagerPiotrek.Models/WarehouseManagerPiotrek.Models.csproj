@@ -45,8 +45,6 @@
     <Compile Include="Currency.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="IStorable.cs" />
-    <Compile Include="MemoryStorage.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductCategory.cs" />

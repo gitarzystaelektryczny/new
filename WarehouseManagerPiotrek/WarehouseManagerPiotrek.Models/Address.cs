@@ -6,22 +6,44 @@ using System.Threading.Tasks;
 
 namespace WarehouseManagerPiotrek.Models
 {
-    /// <summary> Adres </summary>
+    /// <summary> 
+    /// Adres 
+    /// </summary>
     public class Address
     {
-        /// <summary> Id adres </summary>
+        /// <summary> 
+        /// Id adres 
+        /// </summary>
         public int Id { get; set; }
-        /// <summary> Kraj </summary>
+
+        /// <summary> 
+        /// Kraj 
+        /// </summary>
         public string Country { get; set; }
-        /// <summary> Miasto </summary>
+
+        /// <summary> 
+        /// Miasto 
+        /// </summary>
         public string City { get; set; }
-        /// <summary> Ulica </summary>
+
+        /// <summary> 
+        /// Ulica
+        /// </summary>
         public string Steet { get; set; }
-        /// <summary> Numer domu </summary>
+
+        /// <summary>
+        /// Numer domu
+        /// </summary>
         public string HouseNumber { get; set; }
-        /// <summary> Numer mieszkania </summary>
+
+        /// <summary>
+        /// Numer mieszkania 
+        /// </summary>
         public string ApartmentNumber { get; set; }
-        /// <summary> Typ adresu </summary>
+
+        /// <summary> 
+        /// Typ adresu 
+        /// </summary>
         public AddressType Type { get; set; }
     }
 }

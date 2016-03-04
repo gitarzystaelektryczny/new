@@ -6,14 +6,24 @@ using System.Threading.Tasks;
 
 namespace WarehouseManagerPiotrek.Models
 {
-    /// <summary> Pracownik </summary>
+    /// <summary>
+    /// Pracownik
+    /// </summary>
     public class Employee : Person
     {
-        /// <summary> Stanowisko </summary>
+        /// <summary> 
+        /// Stanowisko
+        /// </summary>
         public string Position { get; set; }
-        /// <summary> Pensja </summary>
+
+        /// <summary> 
+        /// Pensja 
+        /// </summary>
         public decimal Salary { get; set; }
-        /// <summary> Data zatrudnienia </summary>
+
+        /// <summary>
+        /// Data zatrudnienia 
+        /// </summary>
         public DateTime EmploymentDate { get; set; }    
     }
 }

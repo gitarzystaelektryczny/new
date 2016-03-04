@@ -4,14 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WarehouseManagerPiotrek.Models
+namespace WarehouseManagerPiotrek.DataAccessLayer
 {
-    /// <summary> Przechowywanie listy </summary>
+    /// <summary> 
+    /// Przechowywanie listy 
+    /// </summary>
     public class MemoryStorage<T> : IStorable<T>
     {
         List<T> lista = new List<T>();
 
-        /// <summary> dodawanie elementów listy </summary>
+        /// <summary> 
+        /// dodawanie elementów listy 
+        /// </summary>
         public void AddElement(T element)
         {
             lista.Add(element);

@@ -6,18 +6,34 @@ using System.Threading.Tasks;
 
 namespace WarehouseManagerPiotrek.Models
 {   
-    /// <summary> Waluta  </summary>
+    /// <summary> 
+    /// Waluta  
+    /// </summary>
     public class Currency
     {
-        /// <summary> Id waluta  </summary>
+        /// <summary> 
+        /// Id waluta  
+        /// </summary>
         public int Id { get; set; }
-        /// <summary> Nazwa waluty </summary>
+
+        /// <summary> 
+        /// Nazwa waluty 
+        /// </summary>
         public string Name { get; set; }
-        /// <summary> Przelicznik  </summary>
+
+        /// <summary> 
+        /// Przelicznik  
+        /// </summary>
         public decimal Converter { get; set; }
-        /// <summary> Symbol waluty </summary>
+
+        /// <summary> 
+        /// Symbol waluty 
+        /// </summary>
         public string Code { get; set; }
-        /// <summary> Średni kurs </summary>
+
+        /// <summary> 
+        /// Średni kurs
+        /// </summary>
         public decimal AverageExchange { get; set; }
 
 

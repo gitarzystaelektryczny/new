@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace WarehouseManagerPiotrek.Models
 {
-    /// <summary> Klient </summary>
+    /// <summary> 
+    /// Klient 
+    /// </summary>
     public class Customer : Person
     {   
-        /// <summary> Data rejestracji </summary>
+        /// <summary> 
+        /// Data rejestracji 
+        /// </summary>
         public DateTime RegistrationDate { get; set; }
     }
 }

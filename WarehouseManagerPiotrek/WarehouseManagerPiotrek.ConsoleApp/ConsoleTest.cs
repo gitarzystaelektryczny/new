@@ -10,13 +10,15 @@ namespace WarehouseManagerPiotrek.ConsoleApp
 {
     public class ConsoleTest
     {
-        /// <summary> Wyświetlenie w konsoli listy walut </summary>
+        /// <summary> 
+        /// Wyświetlenie w konsoli listy walut 
+        /// </summary>
         internal void ShowCurrency()
         {
             CurrencyRate currencyRate = new CurrencyRate();
             try
             {
-                foreach (var i in currencyRate.GetCurrency(currencyRate.GetXml()))
+                foreach (var i in currencyRate.GetCurrency())
                 {
                     Console.WriteLine(i.Name);
                     Console.WriteLine(i.Converter);

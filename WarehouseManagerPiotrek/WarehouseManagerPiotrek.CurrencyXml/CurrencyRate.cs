@@ -10,19 +10,25 @@ using WarehouseManagerPiotrek.Models;
 
 namespace WarehouseManagerPiotrek.CurrencyXml
 {
-    /// <summary> Kurs wymiany walut </summary>
+    /// <summary> 
+    /// Kurs wymiany walut 
+    /// </summary>
     public class CurrencyRate
     {
-        const string url = "http://www.nbp.pl/kursy/xml/lasta.xml";
-        /// <summary> Pobieranie strony (xml) do string </summary>
-        public string GetXml()
+        private const string url = "http://www.nbp.pl/kursy/xml/lasta.xml";
+        private string xml;
+        private List<Currency> currencyList;
+
+        /// <summary>
+        /// Pobieranie strony (xml) do string
+        /// </summary>
+        private void GetXml()
         {
             try
             {
-                string xml;
                 using (var webClient = new WebClient())
                 {
-                 return xml = webClient.DownloadString(url);
+                 xml = webClient.DownloadString(url);
                 }
             }
             catch (Exception ex)
@@ -30,25 +36,33 @@ namespace WarehouseManagerPiotrek.CurrencyXml
                 throw new Exception("Błąd z plikiem XML:", ex);
             }
         }
-        /// <summary> Parsowanie na xml, zwrócenie listy walut </summary>
-        public List<Currency> GetCurrency(string xml)
+        /// <summary> 
+        /// Parsowanie na xml, zwrócenie listy walut 
+        /// </summary>
+        private void ParseToCurrency()
         {
             try
             {
                 XDocument doc = XDocument.Parse(xml);
-                List<Currency> currencyList = (
+                currencyList = (
                     from pozycja in doc.Root.Elements("pozycja")
                     select new Currency(
                         pozycja.Element("nazwa_waluty").Value,
                         decimal.Parse(pozycja.Element("przelicznik").Value),
                         pozycja.Element("kod_waluty").Value,
-                        decimal.Parse(pozycja.Element("kurs_sredni").Value))).ToList();
-                return currencyList;
+                        decimal.Parse(pozycja.Element("kurs_sredni").Value))).ToList();               
             }
             catch (Exception ex)
             {
                 throw new Exception("Błąd z plikiem XML:", ex);
             }
+        }
+
+        public List<Currency> GetCurrency()
+        {
+            GetXml();
+            ParseToCurrency();
+            return currencyList;
         }
     }
 }
