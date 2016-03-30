@@ -48,34 +48,33 @@
             this.textBoxEmploymentDate = new System.Windows.Forms.TextBox();
             this.labelAddress = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.databaseDataSet1 = new WarehouseManagerArek.WinFormsApp.DatabaseDataSet1();
-            this.employeeTableAdapter1 = new WarehouseManagerArek.WinFormsApp.DatabaseDataSet1TableAdapters.EmployeeTableAdapter();
-            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewEmployeeName
             // 
+            this.dataGridViewEmployeeName.AccessibleName = "";
+            this.dataGridViewEmployeeName.AllowUserToDeleteRows = false;
             this.dataGridViewEmployeeName.AutoGenerateColumns = false;
             this.dataGridViewEmployeeName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEmployeeName.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FirstName,
             this.LastName});
-            this.dataGridViewEmployeeName.DataSource = this.employeeBindingSource1;
-            this.dataGridViewEmployeeName.Location = new System.Drawing.Point(33, 12);
+            this.dataGridViewEmployeeName.DataSource = this.employeeBindingSource;
+            this.dataGridViewEmployeeName.Location = new System.Drawing.Point(12, 29);
             this.dataGridViewEmployeeName.Name = "dataGridViewEmployeeName";
-            this.dataGridViewEmployeeName.Size = new System.Drawing.Size(245, 311);
+            this.dataGridViewEmployeeName.ReadOnly = true;
+            this.dataGridViewEmployeeName.Size = new System.Drawing.Size(295, 294);
             this.dataGridViewEmployeeName.TabIndex = 0;
             this.dataGridViewEmployeeName.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployeeName_CellContentClick);
+            this.dataGridViewEmployeeName.SelectionChanged += new System.EventHandler(this.dataGridViewEmployeeName_SelectionChanged);
             // 
             // employeeBindingSource
             // 
-            this.employeeBindingSource.DataMember = "Employee";
+            this.employeeBindingSource.DataSource = typeof(WarehouseManagerArek.Models.Employee);
             // 
             // buttonAddEmployee
             // 
@@ -96,6 +95,7 @@
             this.buttonEditEmployee.TabIndex = 2;
             this.buttonEditEmployee.Text = "Edytuj pracownika";
             this.buttonEditEmployee.UseVisualStyleBackColor = true;
+            this.buttonEditEmployee.Click += new System.EventHandler(this.buttonEditEmployee_Click);
             // 
             // buttonDeleteEmployee
             // 
@@ -106,6 +106,7 @@
             this.buttonDeleteEmployee.TabIndex = 3;
             this.buttonDeleteEmployee.Text = "Usuń pracownika z bazy";
             this.buttonDeleteEmployee.UseVisualStyleBackColor = true;
+            this.buttonDeleteEmployee.Click += new System.EventHandler(this.buttonDeleteEmployee_Click);
             // 
             // labelPhoneMobile
             // 
@@ -118,9 +119,9 @@
             // 
             // textBoxPhoneMobile
             // 
-            this.textBoxPhoneMobile.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "PhoneMobile", true));
             this.textBoxPhoneMobile.Location = new System.Drawing.Point(331, 29);
             this.textBoxPhoneMobile.Name = "textBoxPhoneMobile";
+            this.textBoxPhoneMobile.ReadOnly = true;
             this.textBoxPhoneMobile.Size = new System.Drawing.Size(192, 20);
             this.textBoxPhoneMobile.TabIndex = 5;
             // 
@@ -135,9 +136,9 @@
             // 
             // textBoxPhoneOffice
             // 
-            this.textBoxPhoneOffice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "PhoneOffice", true));
             this.textBoxPhoneOffice.Location = new System.Drawing.Point(331, 68);
             this.textBoxPhoneOffice.Name = "textBoxPhoneOffice";
+            this.textBoxPhoneOffice.ReadOnly = true;
             this.textBoxPhoneOffice.Size = new System.Drawing.Size(192, 20);
             this.textBoxPhoneOffice.TabIndex = 7;
             // 
@@ -152,9 +153,9 @@
             // 
             // textBoxMail
             // 
-            this.textBoxMail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "Mail", true));
             this.textBoxMail.Location = new System.Drawing.Point(331, 107);
             this.textBoxMail.Name = "textBoxMail";
+            this.textBoxMail.ReadOnly = true;
             this.textBoxMail.Size = new System.Drawing.Size(192, 20);
             this.textBoxMail.TabIndex = 9;
             // 
@@ -169,9 +170,9 @@
             // 
             // textBoxPosition
             // 
-            this.textBoxPosition.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "Position", true));
             this.textBoxPosition.Location = new System.Drawing.Point(331, 146);
             this.textBoxPosition.Name = "textBoxPosition";
+            this.textBoxPosition.ReadOnly = true;
             this.textBoxPosition.Size = new System.Drawing.Size(192, 20);
             this.textBoxPosition.TabIndex = 11;
             // 
@@ -186,9 +187,9 @@
             // 
             // textBoxSalary
             // 
-            this.textBoxSalary.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "Salary", true));
             this.textBoxSalary.Location = new System.Drawing.Point(331, 185);
             this.textBoxSalary.Name = "textBoxSalary";
+            this.textBoxSalary.ReadOnly = true;
             this.textBoxSalary.Size = new System.Drawing.Size(192, 20);
             this.textBoxSalary.TabIndex = 13;
             // 
@@ -203,9 +204,9 @@
             // 
             // textBoxEmploymentDate
             // 
-            this.textBoxEmploymentDate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource1, "EmploymentDate", true));
             this.textBoxEmploymentDate.Location = new System.Drawing.Point(331, 224);
             this.textBoxEmploymentDate.Name = "textBoxEmploymentDate";
+            this.textBoxEmploymentDate.ReadOnly = true;
             this.textBoxEmploymentDate.Size = new System.Drawing.Size(192, 20);
             this.textBoxEmploymentDate.TabIndex = 15;
             // 
@@ -223,39 +224,31 @@
             this.textBox1.Location = new System.Drawing.Point(331, 264);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(192, 59);
             this.textBox1.TabIndex = 17;
             // 
-            // databaseDataSet1
-            // 
-            this.databaseDataSet1.DataSetName = "DatabaseDataSet1";
-            this.databaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeeTableAdapter1
-            // 
-            this.employeeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // employeeBindingSource1
-            // 
-            this.employeeBindingSource1.DataMember = "Employee";
-            this.employeeBindingSource1.DataSource = this.databaseDataSet1;
-            // 
             // FirstName
             // 
+            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.FirstName.DataPropertyName = "FirstName";
             this.FirstName.HeaderText = "Imie";
             this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
             // 
             // LastName
             // 
+            this.LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.LastName.DataPropertyName = "LastName";
             this.LastName.HeaderText = "Nazwisko";
             this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
             // 
             // EmployeeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(582, 443);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelAddress);
@@ -275,13 +268,16 @@
             this.Controls.Add(this.buttonEditEmployee);
             this.Controls.Add(this.buttonAddEmployee);
             this.Controls.Add(this.dataGridViewEmployeeName);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EmployeeManager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeManager";
             this.Load += new System.EventHandler(this.EmployeeManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployeeName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,10 +303,7 @@
         private System.Windows.Forms.TextBox textBoxEmploymentDate;
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.TextBox textBox1;
-        private DatabaseDataSet1 databaseDataSet1;
         private System.Windows.Forms.BindingSource employeeBindingSource;
-        private DatabaseDataSet1TableAdapters.EmployeeTableAdapter employeeTableAdapter1;
-        private System.Windows.Forms.BindingSource employeeBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
     }

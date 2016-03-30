@@ -15,10 +15,12 @@ namespace WarehouseManagerArek.Models
         /// stanowisko(pracownik)
         /// </summary>
         public string Position { get; set; } 
+
         /// <summary>
         /// pensja(pracownik)
         /// </summary>
         public decimal Salary { get; set; }
+
         /// <summary>
         /// data zatrudnienia(pracownik)
         /// </summary>

@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,10 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseDataSet1.xsd</DependentUpon>
+    <Compile Include="EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeManager.cs">
       <SubType>Form</SubType>
@@ -66,19 +82,23 @@
     <Compile Include="EmployeeManager.Designer.cs">
       <DependentUpon>EmployeeManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddEmployee.cs">
+    <Compile Include="AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddEmployee.Designer.cs">
-      <DependentUpon>FormAddEmployee.cs</DependentUpon>
+    <Compile Include="AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators.cs" />
+    <EmbeddedResource Include="EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeManager.resx">
       <DependentUpon>EmployeeManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddEmployee.resx">
-      <DependentUpon>FormAddEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,17 +109,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DatabaseDataSet1.xsc">
-      <DependentUpon>DatabaseDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DatabaseDataSet1.xss">
-      <DependentUpon>DatabaseDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WarehouseManagerArek.Models.Employee.datasource" />
     <None Include="Properties\Settings.settings">
@@ -126,6 +135,27 @@
       <Project>{f3c083ef-40ca-489d-8bb9-4e5b47d332eb}</Project>
       <Name>WarehouseManagerArek.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

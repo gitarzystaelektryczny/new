@@ -17,7 +17,7 @@ namespace WarehouseManagerArek.WinFormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeManager());
+            Application.Run(new EmployeeManager(new EmployeeStorage()));
         }
 
     }

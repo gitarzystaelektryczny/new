@@ -34,5 +34,16 @@ namespace WarehouseManagerArek.WinFormsApp.Properties {
                 return ((string)(this["DatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database.mdf;" +
+            "Integrated Security=True;Connect Timeout=30")]
+        public string DatabaseConnectionString1 {
+            get {
+                return ((string)(this["DatabaseConnectionString1"]));
+            }
+        }
     }
 }

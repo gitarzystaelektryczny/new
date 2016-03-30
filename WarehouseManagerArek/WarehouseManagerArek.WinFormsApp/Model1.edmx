@@ -5,40 +5,44 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Person">
+        <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Position" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Salary" Type="money" Nullable="false" />
+          <Property Name="EmploymentDate" Type="datetime" Nullable="false" />
+          <Property Name="FirstName" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="LastName" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="PhoneMobile" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="PhoneOffice" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Mail" Type="nchar" MaxLength="30" Nullable="false" />
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Age" Type="tinyint" Nullable="false" />
-          <Property Name="Pesel" Type="nvarchar" MaxLength="11" Nullable="false" />
-          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="EditDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityContainer Name="DatabaseModelStoreContainer">
-          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Person">
+        <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Position" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="EmploymentDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PhoneMobile" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PhoneOffice" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Mail" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Age" Type="Byte" Nullable="false" />
-          <Property Name="Pesel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="EditDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="People" EntityType="Self.Person" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -46,16 +50,18 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
-          <EntitySetMapping Name="People">
-            <EntityTypeMapping TypeName="DatabaseModel.Person">
-              <MappingFragment StoreEntitySet="Person">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="DatabaseModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="EmploymentDate" ColumnName="EmploymentDate" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="Pesel" ColumnName="Pesel" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="PhoneMobile" ColumnName="PhoneMobile" />
+                <ScalarProperty Name="PhoneOffice" ColumnName="PhoneOffice" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

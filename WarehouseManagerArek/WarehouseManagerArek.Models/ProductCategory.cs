@@ -15,10 +15,12 @@ namespace WarehouseManagerArek.Models
         /// id(kategoria produktu)
         /// </summary>
         public int Id { get; set; }
+
         /// <summary>
         /// nazwa(kategoria produktu)
         /// </summary>
         public string Name { get; set; }
+
         /// <summary>
         /// opis(kategoria produktu)
         /// </summary>

@@ -15,37 +15,45 @@ namespace WarehouseManagerArek.Models
         /// id(osoba)
         /// </summary>
         public int Id { get; set; }
+
         /// <summary>
         /// imię(osoba)
         /// </summary>
         public string FirstName { get; set; }
+
         /// <summary>
         /// nazwisko(osoba)
         /// </summary>
         public string LastName { get; set; }
+
         /// <summary>
         /// numer telefonu prywatnego(osoba)
         /// </summary>
-        public string PhoneMobile { get; set; }
+        public string MobilePhone { get; set; }
+
         /// <summary>
         /// numer telefonu służbowego(osoba)
         /// </summary>
-        public string PhoneOffice { get; set; }
+        public string OfficePhone { get; set; }
+
         /// <summary>
         /// adres mailowy(osoba)
         /// </summary>
         public string Mail { get; set; }
+
         /// <summary>
         /// adres zamieszkania(osoba)
         /// </summary>
-        public Address AddressMain { get; set; }
+        public Address MainAddress { get; set; }
+
         /// <summary>
         /// adres do korespondencji
         /// </summary>
-        public Address AddressForwarding { get; set; }
+        public Address ForwardingAddress { get; set; }
+
         /// <summary>
         /// adres zameldowania
         /// </summary>
-        public Address AddressRegistered { get; set; }
+        public Address RegisteredAddress { get; set; }
     }
 }

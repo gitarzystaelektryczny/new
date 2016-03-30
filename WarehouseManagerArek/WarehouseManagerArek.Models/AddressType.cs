@@ -14,14 +14,16 @@ namespace WarehouseManagerArek.Models
         /// <summary>
         /// adres zamieszkania
         /// </summary>
-        AddressMain = 1,
+        MainAddress = 1,
+
         /// <summary>
         /// adres do korespondencji
         /// </summary>
-        AddressForwarding = 2,
+        ForwardingAddress = 2,
+
         /// <summary>
         /// adres zameldowania
         /// </summary>
-        AddressRegistered = 3
+        RegisteredAddress = 3
     }
 }

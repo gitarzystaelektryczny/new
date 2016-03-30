@@ -17,7 +17,7 @@ namespace WarehouseManagerArek.ConsoleApp
             CurrencyRate currencyRate = new CurrencyRate();
             try
             {
-                foreach (var i in currencyRate.GetCurrency(currencyRate.GetXml()))
+                foreach (var i in currencyRate.GetCurrency())
                 {
                     Console.WriteLine(i.Name);
                     Console.WriteLine(i.Converter);

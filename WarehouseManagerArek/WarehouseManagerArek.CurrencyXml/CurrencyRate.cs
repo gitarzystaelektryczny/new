@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using WarehouseManagerArek.Models;
 using System.Net;
 using System.Xml.Linq;
-using System.Xml.XPath;
 
 namespace WarehouseManagerArek.CurrencyXml
 {
@@ -15,49 +14,56 @@ namespace WarehouseManagerArek.CurrencyXml
     /// </summary>
     public class CurrencyRate
     {
-        const string url = "http://www.nbp.pl/kursy/xml/lasta.xml";
+        private const string url = "http://www.nbp.pl/kursy/xml/lasta.xml";
+        private string xml;
+        private List<Currency> currencyList;
+
         /// <summary>
         /// Pobieranie strony xml do string
         /// </summary>
-        public string GetXml()
+        private void GetXml()
         {
             try
             {
-                string xml;
                 using (var webClient = new WebClient())
                 {
                    xml = webClient.DownloadString(url);
                 }
-                return xml;
             }
             catch (Exception ex)
             {
                 throw new Exception("Nie można pobrać pliku Xml!", ex);
-            }
-            
+            }  
         }
+
         /// <summary>
         /// Parsowanie xml i zwracanie listy walut
         /// </summary>
-        public List<Currency> GetCurrency(string xml)
+        private void ParseToCurrency()
         {
             try
             {
                 XDocument doc = XDocument.Parse(xml);
-                List<Currency> currencyList = (
+                currencyList = (
                     from pozycja in doc.Root.Elements("pozycja")
                     select new Currency(
                         pozycja.Element("nazwa_waluty").Value,
                         decimal.Parse(pozycja.Element("przelicznik").Value),
                         pozycja.Element("kod_waluty").Value,
                         decimal.Parse(pozycja.Element("kurs_sredni").Value))).ToList();
-                return currencyList;
             }
             catch (Exception ex)
             {
                 throw new Exception("Błąd pliku Xml!", ex);
             }
                
+        }
+
+        public List<Currency> GetCurrency()
+        {
+            GetXml();
+            ParseToCurrency();
+            return currencyList;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WarehouseManagerArek.WinFormsApp
 {
-    partial class FormAddEmployee
+    partial class AddEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -35,17 +35,19 @@
             this.labelAddEmplPhoneOffice = new System.Windows.Forms.Label();
             this.labelAddEmplMail = new System.Windows.Forms.Label();
             this.textBoxAddEmplLastName = new System.Windows.Forms.TextBox();
-            this.textBoxAddEmplPhoneMobile = new System.Windows.Forms.TextBox();
+            this.textBoxAddEmplMobilePhone = new System.Windows.Forms.TextBox();
             this.textBoxAddEmplMail = new System.Windows.Forms.TextBox();
             this.textBoxAddEmplPosition = new System.Windows.Forms.TextBox();
             this.textBoxAddEmplSalary = new System.Windows.Forms.TextBox();
-            this.textBoxAddEmplPhoneOffice = new System.Windows.Forms.TextBox();
+            this.textBoxAddEmplOfficePhone = new System.Windows.Forms.TextBox();
             this.labelAddEmplPosition = new System.Windows.Forms.Label();
             this.labelAddEmplSalary = new System.Windows.Forms.Label();
             this.labelAddEmplEmploymentDate = new System.Windows.Forms.Label();
-            this.textBoxAddEmplEmploymentDate = new System.Windows.Forms.TextBox();
-            this.textBoxAddEmplAddress = new System.Windows.Forms.TextBox();
-            this.labelAddEmplAddress = new System.Windows.Forms.Label();
+            this.buttonAddNewEmployee = new System.Windows.Forms.Button();
+            this.dateTimePickerAddEmplEmploymentDate = new System.Windows.Forms.DateTimePicker();
+            this.labelMobilePhone = new System.Windows.Forms.Label();
+            this.labelOfficePhone = new System.Windows.Forms.Label();
+            this.labelSalary = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelAddEmplFirstName
@@ -63,6 +65,7 @@
             this.textBoxAddEmplFirstName.Name = "textBoxAddEmplFirstName";
             this.textBoxAddEmplFirstName.Size = new System.Drawing.Size(142, 20);
             this.textBoxAddEmplFirstName.TabIndex = 1;
+            this.textBoxAddEmplFirstName.TextChanged += new System.EventHandler(this.textBoxAddEmplFirstName_TextChanged);
             // 
             // labelAddEmplLastName
             // 
@@ -105,42 +108,48 @@
             this.textBoxAddEmplLastName.Location = new System.Drawing.Point(173, 59);
             this.textBoxAddEmplLastName.Name = "textBoxAddEmplLastName";
             this.textBoxAddEmplLastName.Size = new System.Drawing.Size(142, 20);
-            this.textBoxAddEmplLastName.TabIndex = 6;
+            this.textBoxAddEmplLastName.TabIndex = 2;
+            this.textBoxAddEmplLastName.TextChanged += new System.EventHandler(this.textBoxAddEmplLastName_TextChanged);
             // 
-            // textBoxAddEmplPhoneMobile
+            // textBoxAddEmplMobilePhone
             // 
-            this.textBoxAddEmplPhoneMobile.Location = new System.Drawing.Point(173, 94);
-            this.textBoxAddEmplPhoneMobile.Name = "textBoxAddEmplPhoneMobile";
-            this.textBoxAddEmplPhoneMobile.Size = new System.Drawing.Size(142, 20);
-            this.textBoxAddEmplPhoneMobile.TabIndex = 7;
+            this.textBoxAddEmplMobilePhone.Location = new System.Drawing.Point(173, 94);
+            this.textBoxAddEmplMobilePhone.Name = "textBoxAddEmplMobilePhone";
+            this.textBoxAddEmplMobilePhone.Size = new System.Drawing.Size(142, 20);
+            this.textBoxAddEmplMobilePhone.TabIndex = 3;
+            this.textBoxAddEmplMobilePhone.TextChanged += new System.EventHandler(this.textBoxAddEmplMobilePhone_TextChanged);
             // 
             // textBoxAddEmplMail
             // 
             this.textBoxAddEmplMail.Location = new System.Drawing.Point(173, 162);
             this.textBoxAddEmplMail.Name = "textBoxAddEmplMail";
             this.textBoxAddEmplMail.Size = new System.Drawing.Size(142, 20);
-            this.textBoxAddEmplMail.TabIndex = 8;
+            this.textBoxAddEmplMail.TabIndex = 5;
+            this.textBoxAddEmplMail.TextChanged += new System.EventHandler(this.textBoxAddEmplMail_TextChanged);
             // 
             // textBoxAddEmplPosition
             // 
             this.textBoxAddEmplPosition.Location = new System.Drawing.Point(173, 194);
             this.textBoxAddEmplPosition.Name = "textBoxAddEmplPosition";
             this.textBoxAddEmplPosition.Size = new System.Drawing.Size(142, 20);
-            this.textBoxAddEmplPosition.TabIndex = 9;
+            this.textBoxAddEmplPosition.TabIndex = 6;
+            this.textBoxAddEmplPosition.TextChanged += new System.EventHandler(this.textBoxAddEmplPosition_TextChanged);
             // 
             // textBoxAddEmplSalary
             // 
             this.textBoxAddEmplSalary.Location = new System.Drawing.Point(173, 227);
             this.textBoxAddEmplSalary.Name = "textBoxAddEmplSalary";
             this.textBoxAddEmplSalary.Size = new System.Drawing.Size(142, 20);
-            this.textBoxAddEmplSalary.TabIndex = 10;
+            this.textBoxAddEmplSalary.TabIndex = 7;
+            this.textBoxAddEmplSalary.TextChanged += new System.EventHandler(this.textBoxAddEmplSalary_TextChanged);
             // 
-            // textBoxAddEmplPhoneOffice
+            // textBoxAddEmplOfficePhone
             // 
-            this.textBoxAddEmplPhoneOffice.Location = new System.Drawing.Point(173, 129);
-            this.textBoxAddEmplPhoneOffice.Name = "textBoxAddEmplPhoneOffice";
-            this.textBoxAddEmplPhoneOffice.Size = new System.Drawing.Size(142, 20);
-            this.textBoxAddEmplPhoneOffice.TabIndex = 11;
+            this.textBoxAddEmplOfficePhone.Location = new System.Drawing.Point(173, 129);
+            this.textBoxAddEmplOfficePhone.Name = "textBoxAddEmplOfficePhone";
+            this.textBoxAddEmplOfficePhone.Size = new System.Drawing.Size(142, 20);
+            this.textBoxAddEmplOfficePhone.TabIndex = 4;
+            this.textBoxAddEmplOfficePhone.TextChanged += new System.EventHandler(this.textBoxAddEmplOfficePhone_TextChanged);
             // 
             // labelAddEmplPosition
             // 
@@ -169,45 +178,74 @@
             this.labelAddEmplEmploymentDate.TabIndex = 14;
             this.labelAddEmplEmploymentDate.Text = "Data zatrudnienia";
             // 
-            // textBoxAddEmplEmploymentDate
+            // buttonAddNewEmployee
             // 
-            this.textBoxAddEmplEmploymentDate.Location = new System.Drawing.Point(173, 261);
-            this.textBoxAddEmplEmploymentDate.Name = "textBoxAddEmplEmploymentDate";
-            this.textBoxAddEmplEmploymentDate.Size = new System.Drawing.Size(142, 20);
-            this.textBoxAddEmplEmploymentDate.TabIndex = 15;
+            this.buttonAddNewEmployee.Location = new System.Drawing.Point(350, 309);
+            this.buttonAddNewEmployee.Name = "buttonAddNewEmployee";
+            this.buttonAddNewEmployee.Size = new System.Drawing.Size(101, 45);
+            this.buttonAddNewEmployee.TabIndex = 9;
+            this.buttonAddNewEmployee.Text = "DODAJ";
+            this.buttonAddNewEmployee.UseVisualStyleBackColor = true;
+            this.buttonAddNewEmployee.Click += new System.EventHandler(this.buttonAddNewEmployee_Click);
             // 
-            // textBoxAddEmplAddress
+            // dateTimePickerAddEmplEmploymentDate
             // 
-            this.textBoxAddEmplAddress.Location = new System.Drawing.Point(173, 297);
-            this.textBoxAddEmplAddress.Name = "textBoxAddEmplAddress";
-            this.textBoxAddEmplAddress.Size = new System.Drawing.Size(142, 20);
-            this.textBoxAddEmplAddress.TabIndex = 16;
+            this.dateTimePickerAddEmplEmploymentDate.Location = new System.Drawing.Point(173, 261);
+            this.dateTimePickerAddEmplEmploymentDate.Name = "dateTimePickerAddEmplEmploymentDate";
+            this.dateTimePickerAddEmplEmploymentDate.Size = new System.Drawing.Size(142, 20);
+            this.dateTimePickerAddEmplEmploymentDate.TabIndex = 15;
+            this.dateTimePickerAddEmplEmploymentDate.Value = new System.DateTime(2016, 3, 4, 13, 20, 0, 0);
+            this.dateTimePickerAddEmplEmploymentDate.ValueChanged += new System.EventHandler(this.dateTimePickerAddEmplEmploymentDate_ValueChanged);
             // 
-            // labelAddEmplAddress
+            // labelMobilePhone
             // 
-            this.labelAddEmplAddress.AutoSize = true;
-            this.labelAddEmplAddress.Location = new System.Drawing.Point(81, 297);
-            this.labelAddEmplAddress.Name = "labelAddEmplAddress";
-            this.labelAddEmplAddress.Size = new System.Drawing.Size(34, 13);
-            this.labelAddEmplAddress.TabIndex = 17;
-            this.labelAddEmplAddress.Text = "Adres";
+            this.labelMobilePhone.AutoSize = true;
+            this.labelMobilePhone.Location = new System.Drawing.Point(322, 100);
+            this.labelMobilePhone.Name = "labelMobilePhone";
+            this.labelMobilePhone.Size = new System.Drawing.Size(121, 13);
+            this.labelMobilePhone.TabIndex = 16;
+            this.labelMobilePhone.Text = "Podaj wartość liczbową!";
+            this.labelMobilePhone.Visible = false;
             // 
-            // FormAddEmployee
+            // labelOfficePhone
+            // 
+            this.labelOfficePhone.AutoSize = true;
+            this.labelOfficePhone.Location = new System.Drawing.Point(321, 136);
+            this.labelOfficePhone.Name = "labelOfficePhone";
+            this.labelOfficePhone.Size = new System.Drawing.Size(121, 13);
+            this.labelOfficePhone.TabIndex = 17;
+            this.labelOfficePhone.Text = "Podaj wartość liczbową!";
+            this.labelOfficePhone.Visible = false;
+            // 
+            // labelSalary
+            // 
+            this.labelSalary.AutoSize = true;
+            this.labelSalary.Location = new System.Drawing.Point(321, 234);
+            this.labelSalary.Name = "labelSalary";
+            this.labelSalary.Size = new System.Drawing.Size(121, 13);
+            this.labelSalary.TabIndex = 18;
+            this.labelSalary.Text = "Podaj wartość liczbową!";
+            this.labelSalary.Visible = false;
+            // 
+            // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.ClientSize = new System.Drawing.Size(501, 366);
-            this.Controls.Add(this.labelAddEmplAddress);
-            this.Controls.Add(this.textBoxAddEmplAddress);
-            this.Controls.Add(this.textBoxAddEmplEmploymentDate);
+            this.Controls.Add(this.labelSalary);
+            this.Controls.Add(this.labelOfficePhone);
+            this.Controls.Add(this.labelMobilePhone);
+            this.Controls.Add(this.dateTimePickerAddEmplEmploymentDate);
+            this.Controls.Add(this.buttonAddNewEmployee);
             this.Controls.Add(this.labelAddEmplEmploymentDate);
             this.Controls.Add(this.labelAddEmplSalary);
             this.Controls.Add(this.labelAddEmplPosition);
-            this.Controls.Add(this.textBoxAddEmplPhoneOffice);
+            this.Controls.Add(this.textBoxAddEmplOfficePhone);
             this.Controls.Add(this.textBoxAddEmplSalary);
             this.Controls.Add(this.textBoxAddEmplPosition);
             this.Controls.Add(this.textBoxAddEmplMail);
-            this.Controls.Add(this.textBoxAddEmplPhoneMobile);
+            this.Controls.Add(this.textBoxAddEmplMobilePhone);
             this.Controls.Add(this.textBoxAddEmplLastName);
             this.Controls.Add(this.labelAddEmplMail);
             this.Controls.Add(this.labelAddEmplPhoneOffice);
@@ -215,7 +253,8 @@
             this.Controls.Add(this.labelAddEmplLastName);
             this.Controls.Add(this.textBoxAddEmplFirstName);
             this.Controls.Add(this.labelAddEmplFirstName);
-            this.Name = "FormAddEmployee";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "AddEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj nowego pracownika";
             this.ResumeLayout(false);
@@ -232,16 +271,18 @@
         private System.Windows.Forms.Label labelAddEmplPhoneOffice;
         private System.Windows.Forms.Label labelAddEmplMail;
         private System.Windows.Forms.TextBox textBoxAddEmplLastName;
-        private System.Windows.Forms.TextBox textBoxAddEmplPhoneMobile;
+        private System.Windows.Forms.TextBox textBoxAddEmplMobilePhone;
         private System.Windows.Forms.TextBox textBoxAddEmplMail;
         private System.Windows.Forms.TextBox textBoxAddEmplPosition;
         private System.Windows.Forms.TextBox textBoxAddEmplSalary;
-        private System.Windows.Forms.TextBox textBoxAddEmplPhoneOffice;
+        private System.Windows.Forms.TextBox textBoxAddEmplOfficePhone;
         private System.Windows.Forms.Label labelAddEmplPosition;
         private System.Windows.Forms.Label labelAddEmplSalary;
         private System.Windows.Forms.Label labelAddEmplEmploymentDate;
-        private System.Windows.Forms.TextBox textBoxAddEmplEmploymentDate;
-        private System.Windows.Forms.TextBox textBoxAddEmplAddress;
-        private System.Windows.Forms.Label labelAddEmplAddress;
+        private System.Windows.Forms.Button buttonAddNewEmployee;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAddEmplEmploymentDate;
+        private System.Windows.Forms.Label labelMobilePhone;
+        private System.Windows.Forms.Label labelOfficePhone;
+        private System.Windows.Forms.Label labelSalary;
     }
 }

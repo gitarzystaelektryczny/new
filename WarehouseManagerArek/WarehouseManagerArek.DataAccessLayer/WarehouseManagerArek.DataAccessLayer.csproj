@@ -66,19 +66,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddElement.cs" />
     <Compile Include="Address.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="AddressType.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="AddTest.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeStorage.cs" />
+    <Compile Include="IEmployeeStorable.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
